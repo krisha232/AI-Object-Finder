@@ -1,3 +1,4 @@
+status1="";
 input="";
 objects=[];
 function preload(){
