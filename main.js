@@ -17,7 +17,7 @@ function draw(){
         objectDetector.detect(video, gotResult);
         for(i=0; i<objects.length; i++){
           if(objects[i].label==input){  document.getElementById("status").innerHTML="Status : Objects Detected";
-            document.getElementById("object").innerHTML=input+"found";
+            document.getElementById("object").innerHTML=input+" found";
 
             fill("#FF0000");
             percent=floor(objects[i].confidence * 100);
@@ -26,7 +26,7 @@ function draw(){
             stroke("#FF0000");
             rect(objects[i].x,objects[i].y,objects[i].width,objects[i].height);
         }else{
-            document.getElementById("object").innerHTML=input+"not found";
+            document.getElementById("object").innerHTML=input+" not found";
             document.getElementById("status").innerHTML="Status : Object Not Detected";
         }
     }}
@@ -42,8 +42,8 @@ function gotResult(error,results){
 function start(){
     objectDetector=ml5.objectDetector('cocossd', modelLoaded);
     document.getElementById("status").innerHTML="Status : Detecting Objects";
-    document.getElementById("object").innerHTML="checking for"+input;
-    input=document.getElementById("input").value;
+      input=document.getElementById("input").value;
+     document.getElementById("object").innerHTML="checking for"+input;
     console.log(input);
 }
 function modelLoaded(){
